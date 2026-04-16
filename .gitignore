@@ -1,0 +1,39 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+eclipse
+
+# idea
+out/
+*.ipr
+*.iws
+*.iml
+.idea/
+
+# gradle
+build/
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+
+# forge / runtime
+run/
+logs/
+crash-reports/
+saves/
+world/
+
+# server runtime files
+server.properties
+whitelist.json
+banned-players.json
+banned-ips.json
+ops.json
+usercache.json
+eula.txt
+
+# Files from Forge MDK
+forge*changelog.txt
