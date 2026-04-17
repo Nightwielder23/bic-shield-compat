@@ -4,7 +4,7 @@ A lightweight server side Minecraft 1.20.1 Forge mod that injects the correct Fo
 
 ## What This Mod Does
 
-Born in Chaos adds two shield-using mobs: the Skeleton Thrasher and the Door Knight — but they are missing the `forge:shield_users` entity tag. This means mods that check this tag to determine shield behavior do not recognize them as shield users. This mod injects the correct tags at runtime.
+Born in Chaos adds two shield-using mobs: the Skeleton Thrasher and the Door Knight, but they are missing the `forge:shield_users` entity tag. This means mods that check this tag to determine shield behavior do not recognize them as shield users. This mod injects the correct tags at runtime.
 
 ## Requirements
 
