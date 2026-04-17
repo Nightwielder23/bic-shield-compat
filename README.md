@@ -1,34 +1,22 @@
 # BIC Shield Compat
 
-A lightweight server side Minecraft 1.20.1 Forge compatibility mod that fixes Born in Chaos mobs missing Forge entity tags for shield users.
+A lightweight server side Minecraft 1.20.1 Forge mod that injects the correct Forge entity tags onto Born in Chaos shield users.
 
-## The Problem
+## What This Mod Does
 
-Born in Chaos adds mobs like the Skeleton Thrasher and Door Knight that use custom shield implementations. These mobs are missing the Forge entity tags that other mods use to detect shield users. This means mods like Tinkers Construct cannot recognize BIC mobs as shield users and cannot interact with their shields correctly.
-
-## The Fix
-
-At runtime BIC Shield Compat injects the missing forge:shield_users and forge:entities/shield_users tags onto the affected BIC entity types. This restores compatibility with all mods that check those tags.
-
-## Affected Mobs
-
-Skeleton Thrasher and Door Knight.
+Born in Chaos adds two shield-using mobs — the Skeleton Thrasher and the Door Knight — but they are missing the `forge:shield_users` entity tag. This means mods that check this tag to determine shield behavior do not recognize them as shield users. This mod injects the correct tags at runtime.
 
 ## Requirements
 
-Minecraft 1.20.1, Forge 47.x. Born in Chaos and Tinkers Construct are soft dependencies. The mod loads safely without either present.
+Minecraft 1.20.1, Forge 47.x, Born in Chaos. No other mods required.
 
 ## Installation
 
-Place the jar in your mods folder alongside Born in Chaos and Tinkers Construct. No configuration needed.
-
-## Compatibility
-
-Fixes compatibility with any mod that checks forge:shield_users or forge:entities/shield_users entity tags, including but not limited to Tinkers Construct.
+Place the jar in your mods folder. No configuration needed.
 
 ## Server Side Only
 
-This mod only needs to be installed on the server. Clients do not need it.
+This mod only needs to be installed on the server.
 
 ## License
 
