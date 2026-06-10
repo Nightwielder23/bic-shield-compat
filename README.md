@@ -1,43 +1,9 @@
 # BIC Shield Compat
 
-A lightweight server side Minecraft 1.20.1 Forge compatibility mod that fixes Born in Chaos mobs missing Forge entity tags for shield users.
+Server-side Minecraft 1.20.1 Forge mod that makes shield-disabling weapons work against Born in Chaos's blocking mobs.
 
-## The Problem
+The Skeleton Thrasher and Door Knight don't use shield items. They block by giving themselves Resistance IV for a second whenever they take a hit, so an axe that would normally break a shield does nothing against them. A mixin on their hurt path catches a melee hit from a weapon that can disable shields (vanilla axes and Tinkers' Construct axes, through Forge's `canDisableShield`), strips the Resistance, and puts the mob's block on cooldown for five seconds. Other weapons are still blocked as before.
 
-Born in Chaos adds mobs like the Skeleton Thrasher and Door Knight that use custom shield implementations. These mobs are missing the Forge entity tags that other mods use to detect shield users. This means mods like Tinkers Construct cannot recognize BIC mobs as shield users and cannot interact with their shields correctly.
+Needs Minecraft 1.20.1 and Forge 47.x. Born in Chaos is a soft dependency: the mod loads without it but does nothing until it's installed. Tinkers' Construct is optional; without it the fix still applies to vanilla axes. Drop the jar in the server mods folder. There is no config, and it only has to be installed on the server.
 
-## The Fix
-
-At runtime BIC Shield Compat injects the missing forge:shield_users and forge:entities/shield_users tags onto the affected BIC entity types. This restores compatibility with all mods that check those tags.
-
-## Affected Mobs
-
-Skeleton Thrasher and Door Knight.
-
-## Requirements
-
-Minecraft 1.20.1, Forge 47.x. Born in Chaos and Tinkers Construct are soft dependencies. The mod loads safely without either present.
-
-## Installation
-
-Place the jar in your mods folder alongside Born in Chaos and Tinkers Construct. No configuration needed.
-
-## Compatibility
-
-Fixes compatibility with any mod that checks forge:shield_users or forge:entities/shield_users entity tags, including but not limited to Tinkers Construct.
-
-## Server Side Only
-
-This mod only needs to be installed on the server. Clients do not need it.
-
-## License
-
-MIT, Copyright 2026 Nightwielder23. https://github.com/Nightwielder23/bic-shield-compat/blob/main/LICENSE
-
-## Source Code
-
-https://github.com/Nightwielder23/bic-shield-compat
-
-## Author
-
-Made by Nightwielder23: https://github.com/Nightwielder23
+MIT, Copyright 2026 Nightwielder23. Source: https://github.com/Nightwielder23/bic-shield-compat
