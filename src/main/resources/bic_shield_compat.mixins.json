@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.nightwielder.bicshieldcompat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "com.nightwielder.bicshieldcompat.mixin.BicShieldMixinPlugin",
+  "mixins": [
+    "BornInChaosShieldMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
